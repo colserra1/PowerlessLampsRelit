@@ -9,7 +9,7 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.EquipmentSlot;
 import org.queercraft.powerlessLampsRelit.PowerlessLampsRelit;
-import org.queercraft.powerlessLampsRelit.functionality.ToggleLamp;
+import org.queercraft.powerlessLampsRelit.functionality.LampManager;
 
 import java.util.Objects;
 
@@ -56,7 +56,7 @@ public class RightClickListener implements Listener {
             return;
         }
 
-        ToggleLamp.toggle(event.getClickedBlock());
+        LampManager.action(event.getClickedBlock(), "toggle");
 
     }
 }
