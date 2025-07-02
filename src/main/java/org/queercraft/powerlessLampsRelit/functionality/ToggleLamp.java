@@ -21,7 +21,7 @@ public class ToggleLamp {
             boolean lit = currentState.getValue(BlockStateProperties.LIT);
             BlockState newState = currentState.setValue(BlockStateProperties.LIT, !lit);
 
-            // 2 = don't notify neighbors
+            // Don't notify neighbors
             nmsWorld.setBlock(pos, newState, 2);
         }
     }

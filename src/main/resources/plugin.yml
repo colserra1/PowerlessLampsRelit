@@ -5,5 +5,14 @@ api-version: '1.21'
 prefix: PowerlessLampsRelit
 load: STARTUP
 authors: [ colserra ]
-description: A simple plugin permanently turn on lightable blocks.
+description: A simple plugin to permanently turn on lightable blocks.
 website: queercraft.net
+
+commands:
+  PowerlessLamps:
+    description: "Allows checking plugin information."
+
+permissions:
+  lamp.toggle:
+    default: op
+    description: "Basic permission for using the powerless lamps."
