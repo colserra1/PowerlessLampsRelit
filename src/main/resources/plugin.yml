@@ -1,0 +1,9 @@
+name: PowerlessLampsRelit
+version: '1.0-SNAPSHOT'
+main: org.queercraft.powerlessLampsRelit.PowerlessLampsRelit
+api-version: '1.21'
+prefix: PowerlessLampsRelit
+load: STARTUP
+authors: [ colserra ]
+description: A simple plugin permanently turn on lightable blocks.
+website: queercraft.net
