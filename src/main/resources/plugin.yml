@@ -7,12 +7,18 @@ load: STARTUP
 authors: [ colserra ]
 description: A simple plugin to permanently turn on lightable blocks.
 website: queercraft.net
+depend: [WorldEdit]
 
 commands:
-  PowerlessLamps:
-    description: "Allows checking plugin information."
+  lamps:
+    description: "Main command."
+    usage: /lamps <parameter>
+    aliases: [lamp]
 
 permissions:
-  lamp.toggle:
+  lamps.reload:
+    default: op
+    description: "Allows the user to reload the config"
+  lamps.toggle:
     default: op
     description: "Basic permission for using the powerless lamps."
