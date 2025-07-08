@@ -26,6 +26,10 @@ On a basic level, the plugin allows users that have the appropriate permission t
 
 - `/lamp reload` :  
    Reloads the config, currently only used to enable/disable permission requirements
+
+### WorldGuard Flags
+
+- `powerlesslamps-allowed` - Restricts usage of the right-click toggle in a region
   
 ### Permissions
 
