@@ -7,6 +7,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitScheduler;
 import org.queercraft.powerlessLampsRelit.functionality.WorldEditManager;
 
+import java.util.Objects;
 import java.util.logging.Logger;
 
 public class LampCommand extends SafeCommandExecutor {
@@ -29,7 +30,7 @@ public class LampCommand extends SafeCommandExecutor {
 
         switch (arg) {
             case "":
-                sender.sendMessage("Usage: /lamps <command>");
+                sender.sendMessage("Usage: /lamp <command>");
                 break;
             case "reload":
                 handleReloadCommand(sender);
@@ -49,7 +50,7 @@ public class LampCommand extends SafeCommandExecutor {
     }
 
     public void handleReloadCommand(CommandSender sender){
-        if (sender.hasPermission("lamps.reload")) {
+        if (sender.hasPermission("lamp.reload")) {
             plugin.reloadConfig();
             sender.sendMessage("The config has been reloaded.");
         } else {
@@ -58,7 +59,7 @@ public class LampCommand extends SafeCommandExecutor {
     }
 
     public void handleStateChangeCommand(CommandSender sender, String param) {
-        if (sender.hasPermission("lamps.toggle")) {
+        if (sender.hasPermission("lamp.worldedit") && Objects.equals(plugin.getConfig().getString("uses-permissions"), "true")) {
             if (!(sender instanceof Player)) {
                 sender.sendMessage("Only players can run this command.");
                 return;

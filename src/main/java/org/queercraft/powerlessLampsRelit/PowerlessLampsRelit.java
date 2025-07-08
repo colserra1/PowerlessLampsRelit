@@ -21,7 +21,7 @@ public final class PowerlessLampsRelit extends JavaPlugin {
             this.saveDefaultConfig();
             registerListeners();
             logger.log(Level.INFO, "PowerlessLampsRelit plugin enabled.");
-            Objects.requireNonNull(getCommand("lamps")).setExecutor(new LampCommand(this, scheduler, logger));
+            Objects.requireNonNull(getCommand("lamp")).setExecutor(new LampCommand(this, scheduler, logger));
         } catch (Exception e) {
             logger.severe("An unexpected error occurred while enabling PowerlessLampsRelit:");
             logger.severe("Exception type: " + e.getClass().getName());

@@ -10,15 +10,18 @@ website: queercraft.net
 depend: [WorldEdit]
 
 commands:
-  lamps:
+  lamp:
     description: "Main command."
-    usage: /lamps <parameter>
-    aliases: [lamp]
+    usage: /lamp <parameter>
+    aliases: [lamps]
 
 permissions:
-  lamps.reload:
+  lamp.reload:
     default: op
     description: "Allows the user to reload the config"
-  lamps.toggle:
+  lamp.toggle:
     default: op
-    description: "Basic permission for using the powerless lamps."
+    description: "Allows the user to use the basic right-click toggle functionality"
+  lamp.worldedit:
+    default: op
+    description: "Allows the player to utilize the WorldEdit integration"
