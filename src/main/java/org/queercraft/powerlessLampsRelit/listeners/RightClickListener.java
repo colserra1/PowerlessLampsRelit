@@ -10,6 +10,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.EquipmentSlot;
 import org.queercraft.powerlessLampsRelit.PowerlessLampsRelit;
 import org.queercraft.powerlessLampsRelit.functionality.LampManager;
+import org.queercraft.powerlessLampsRelit.functionality.WorldGuardManager;
 
 import java.util.Objects;
 
@@ -25,7 +26,7 @@ public class RightClickListener implements Listener {
 
     @EventHandler
     public void onPlayerUse(PlayerInteractEvent event) {
-        Player p = event.getPlayer();
+        Player player = event.getPlayer();
         boolean isBlock = event.getAction().equals(Action.RIGHT_CLICK_BLOCK);
 
 
@@ -38,10 +39,12 @@ public class RightClickListener implements Listener {
         if (event.getClickedBlock() == null) {
             return;
         }
-        if (!p.hasPermission("lamp.toggle") && usesPermissions) {
+        if (!player.hasPermission("lamp.toggle") && usesPermissions) {
             return;
         }
-        if (!p.getInventory().getItemInMainHand().getType().equals(Material.AIR)) {
+
+
+        if (!player.getInventory().getItemInMainHand().getType().equals(Material.AIR)) {
             return;
         }
         if (    event.getClickedBlock().getBlockData().getMaterial() != Material.REDSTONE_LAMP &&
@@ -55,7 +58,12 @@ public class RightClickListener implements Listener {
                 event.getClickedBlock().getBlockData().getMaterial() != Material.WAXED_WEATHERED_COPPER_BULB) {
             return;
         }
-
+        if (!WorldGuardManager.isLampAllowed(player, event.getClickedBlock().getLocation())) {
+            if(!player.hasPermission("lamp.bypass")  && usesPermissions) {
+                player.sendMessage("You cannot light lamps here.");
+                return;
+            }
+        }
         LampManager.action(event.getClickedBlock(), "toggle");
 
     }

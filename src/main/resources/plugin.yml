@@ -3,11 +3,10 @@ version: '1.0-SNAPSHOT'
 main: org.queercraft.powerlessLampsRelit.PowerlessLampsRelit
 api-version: '1.21'
 prefix: PowerlessLampsRelit
-load: STARTUP
 authors: [ colserra ]
 description: A simple plugin to permanently turn on lightable blocks.
 website: queercraft.net
-depend: [WorldEdit]
+depend: [WorldEdit, WorldGuard]
 
 commands:
   lamp:
@@ -24,4 +23,7 @@ permissions:
     description: "Allows the user to use the basic right-click toggle functionality"
   lamp.worldedit:
     default: op
-    description: "Allows the player to utilize the WorldEdit integration"
+    description: "Allows the user to utilize the WorldEdit integration"
+  lamp.bypass:
+    default: op
+    description: "Allows the user to bypass WorldGuard restrictions for plugin usage"
