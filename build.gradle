@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'org.queercraft'
-version = '1.0-SNAPSHOT'
+version = '1.0'
 
 java {
     toolchain.languageVersion.set(JavaLanguageVersion.of(21))
@@ -25,9 +25,9 @@ repositories {
 }
 
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:1.21.5-R0.1-SNAPSHOT")
-    paperweight.paperDevBundle("1.21.5-R0.1-SNAPSHOT")
-    compileOnly("com.sk89q.worldedit:worldedit-bukkit:7.3.14")
+    compileOnly("io.papermc.paper:paper-api:1.21.7-R0.1-SNAPSHOT")
+    paperweight.paperDevBundle("1.21.7-R0.1-SNAPSHOT")
+    compileOnly("com.sk89q.worldedit:worldedit-bukkit:7.3.15")
     compileOnly 'com.sk89q.worldguard:worldguard-bukkit:7.0.14'
 }
 
