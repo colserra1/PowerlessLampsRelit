@@ -19,14 +19,12 @@ public final class PowerlessLampsRelit extends JavaPlugin {
 
     @Override
     public void onLoad() {
-        // ... do your own plugin things, etc
         Logger logger = getLogger();
         FlagRegistry registry = WorldGuard.getInstance().getFlagRegistry();
         try {
-            // create a flag with the name "my-custom-flag", defaulting to true
             StateFlag flag = new StateFlag("powerlesslamps-allowed", true);
             registry.register(flag);
-            LAMP_FLAG = flag; // only set our field if there was no error
+            LAMP_FLAG = flag; 
         }catch (Exception e) {
             logger.severe("An unexpected error occurred while enabling PowerlessLampsRelit:");
             logger.severe("Exception type: " + e.getClass().getName());
@@ -37,7 +35,6 @@ public final class PowerlessLampsRelit extends JavaPlugin {
     }
     @Override
     public void onEnable() {
-        // Plugin startup logic
         Logger logger = getLogger();
 
         try {
@@ -63,7 +60,6 @@ public final class PowerlessLampsRelit extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
         getLogger().log(Level.INFO, "PowerlessLampsRelit plugin disabled.");
     }
 }
